@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sebsilve <seb.silves@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/14 20:34:32 by sebsilve          #+#    #+#             */
-/*   Updated: 2026/04/14 20:34:32 by sebsilve         ###   ########.fr       */
+/*   Created: 2026/04/19 15:58:19 by sebsilve          #+#    #+#             */
+/*   Updated: 2026/04/19 15:58:19 by sebsilve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*ft_memset(void *ptr, int value, size_t len)
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*h = (unsigned char*)	ptr;
-	unsigned int	byte = (unsigned int)	value;
+	unsigned char	*h;
 
-	while (len--)
-		*h++ = byte;
-	return (ptr)
+	h = (unsigned char*) s;
+	while(n--)
+		*h++ = 0;
 }
