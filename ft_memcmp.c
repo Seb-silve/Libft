@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sebsilve <seb.silves@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 19:23:54 by sebsilve          #+#    #+#             */
-/*   Updated: 2026/04/20 19:23:54 by sebsilve         ###   ########.fr       */
+/*   Created: 2026/04/22 19:30:17 by sebsilve          #+#    #+#             */
+/*   Updated: 2026/04/22 19:30:17 by sebsilve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t  ft_strlcpy(char *dst, const char *src, size_t size)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    size_t  len;
-
-    len = 0;
-    while (src[len])
-        len++;
-    if (size == 0)
-        return len;
-    while (size-- > 1 && *src)
-        *dst++ = *src++;
-    *dst = '\0';
-    return (len);
+	const unsigned char	*p1;
+	const unsigned char	*p2;
+	size_t	x;
+	
+	x = 0;
+	p1 = s1;
+	p2 = s2;
+	while (n > 0 && p1[x] == p2[x])
+	{
+		x++;
+		n--;
+	}
+	if (n == 0)
+		return (0);
+	return (p1[x] - p2[x]);
 }

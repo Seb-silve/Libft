@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sebsilve <seb.silves@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 19:23:54 by sebsilve          #+#    #+#             */
-/*   Updated: 2026/04/20 19:23:54 by sebsilve         ###   ########.fr       */
+/*   Created: 2026/04/25 14:10:59 by sebsilve          #+#    #+#             */
+/*   Updated: 2026/04/25 14:10:59 by sebsilve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t  ft_strlcpy(char *dst, const char *src, size_t size)
+char	*ft_strnstr(const char	*sentence, const char	*word, size_t len)
 {
-    size_t  len;
+	size_t	word_len;
 
-    len = 0;
-    while (src[len])
-        len++;
-    if (size == 0)
-        return len;
-    while (size-- > 1 && *src)
-        *dst++ = *src++;
-    *dst = '\0';
-    return (len);
+	if (word[0] == '\0')
+		return ((char *)sentence);
+	word_len = ft_strlen(word);
+	while (*sentence != '\0' && len >= word_len)
+	{
+		if (ft_memcmp(sentence, word, word_len) == 0)
+			return ((char *)sentence);
+		sentence++;
+		len--;
+	}
+	return (NULL);
 }
