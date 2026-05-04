@@ -1,41 +1,59 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sebsilve <seb.silves@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/25 20:09:54 by sebsilve          #+#    #+#             */
-/*   Updated: 2026/04/25 20:09:54 by sebsilve         ###   ########.fr       */
+/*   Created: 2026/04/28 11:39:05 by sebsilve          #+#    #+#             */
+/*   Updated: 2026/04/28 11:39:05 by sebsilve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_substr(char	const *s, unsigned int	start, size_t len)
+int	ft_intLen(int	n)
 {
-	char*	p;
-	char*	p0;
-	size_t	s_len;
+	int	x;
 
-	if (s == NULL)
-		return (NULL);
-	s_len = ft_strlen(s);
-	if (start < s_len && len > s_len - start)
-		len = s_len - start;
-	p = malloc(len +1);
+	x = 0;
+	if (n < 0)
+	{
+		n = -n;
+		x++;
+	}
+	while (n > 0)
+	{
+		x++;
+		n = n / 10;
+	}
+	if (x == 0)
+		return (1);
+	return (x);
+}
+
+char	*ft_itoa(int	n)
+{
+	char	*p;
+	int	index;
+	long nb;
+
+	nb = (long) n;
+	index = ft_intLen(n);
+	p = malloc(index + 1);
 	if (p == NULL)
 		return (NULL);
-	if (start >= s_len)
+	if (nb < 0)
 	{
-		p[0] = '\0';
-		return (p);
+		p[0] = '-';
+		nb = -nb;
 	}
-	p0 = p;
-	while (len > 0)
+	p[index] = '\0';
+	if (nb == 0)
+		p[0] = '0';
+	while (nb > 0)
 	{
-		*p++ = s[start++];
-		len--;
+		p[--index] = (nb % 10) + '0';
+		nb = nb / 10;
 	}
-	*p = '\0';
-	return (p0);
+	return (p);
 }
