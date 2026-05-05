@@ -6,7 +6,7 @@
 /*   By: sebsilve <seb.silves@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 16:13:27 by sebsilve          #+#    #+#             */
-/*   Updated: 2026/04/25 16:13:27 by sebsilve         ###   ########.fr       */
+/*   Updated: 2026/05/05 11:33:27 by sebsilve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -20,7 +20,7 @@ int	ft_atoi(const char	*str)
 	value = 0;
 	while (*str == ' ' || (*str >= '\t' && *str <= '\r'))
 		str++;
-	if(*str == '-' || *str == '+')
+	if (*str == '-' || *str == '+')
 	{
 		if (*str == '-')
 			sign *= -1;

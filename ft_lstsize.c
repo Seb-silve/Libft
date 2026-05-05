@@ -6,14 +6,14 @@
 /*   By: sebsilve <seb.silves@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 12:21:44 by sebsilve          #+#    #+#             */
-/*   Updated: 2026/05/04 12:21:44 by sebsilve         ###   ########.fr       */
+/*   Updated: 2026/05/05 14:36:33 by sebsilve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "iibft.h"
 
 int	ft_lstsize(t_list *lst)
 {
-	int	size;
+	int		size;
 	t_list	*p;
 
 	size = 0;

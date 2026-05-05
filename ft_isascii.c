@@ -6,12 +6,12 @@
 /*   By: sebsilve <seb.silves@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 20:06:57 by sebsilve          #+#    #+#             */
-/*   Updated: 2026/04/14 20:06:57 by sebsilve         ###   ########.fr       */
+/*   Updated: 2026/05/05 11:44:55 by sebsilve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int ft_isascii(char c)
+int	ft_isascii(char c)
 {
 	return (c >= 0 && c <= 127);
 }

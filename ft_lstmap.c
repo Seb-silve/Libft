@@ -6,12 +6,12 @@
 /*   By: sebsilve <seb.silves@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/05 00:34:36 by sebsilve          #+#    #+#             */
-/*   Updated: 2026/05/05 00:34:36 by sebsilve         ###   ########.fr       */
+/*   Updated: 2026/05/05 15:43:41 by sebsilve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list	*lst, void	*(*f)(void *), void	(*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	
 }

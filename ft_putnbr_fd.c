@@ -6,12 +6,12 @@
 /*   By: sebsilve <seb.silves@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 20:36:15 by sebsilve          #+#    #+#             */
-/*   Updated: 2026/05/02 20:36:15 by sebsilve         ###   ########.fr       */
+/*   Updated: 2026/05/05 14:58:35 by sebsilve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	ft_putnbr_fd(int	n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	if (n < 0)
 	{

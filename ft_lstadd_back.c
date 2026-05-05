@@ -6,7 +6,7 @@
 /*   By: sebsilve <seb.silves@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 12:31:05 by sebsilve          #+#    #+#             */
-/*   Updated: 2026/05/04 12:31:05 by sebsilve         ###   ########.fr       */
+/*   Updated: 2026/05/05 11:52:04 by sebsilve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -18,7 +18,7 @@ void	ft_lstadd_back(t_list	**lst, t_list	*new)
 	if (!*lst)
 	{
 		*lst = new;
-		return;
+		return ;
 	}
 	p = *lst;
 	while (p->next != NULL)

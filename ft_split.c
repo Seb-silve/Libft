@@ -6,12 +6,12 @@
 /*   By: sebsilve <seb.silves@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 16:52:16 by sebsilve          #+#    #+#             */
-/*   Updated: 2026/04/27 16:52:16 by sebsilve         ###   ########.fr       */
+/*   Updated: 2026/05/05 15:00:37 by sebsilve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t	ft_c_num(char const	*s, char c)
+size_t	ft_c_num(char const *s, char c)
 {
 	size_t	num;
 
@@ -25,20 +25,20 @@ size_t	ft_c_num(char const	*s, char c)
 	return (num + 1);
 }
 
-size_t	ft_word_len(char	*s, char	c)
+size_t	ft_word_len(char *s, char c)
 {
 	int	x;
 
 	x = 0;
-	while(s[x] && s[x] != c)
+	while (s[x] && s[x] != c)
 		x++;
 	return (x);
 }
 
-char	**ft_split(char const *s, char	c)
+char	**ft_split(char const *s, char c)
 {
 	size_t	c_numb;
-	int	x;
+	int		x;
 	char	**split;
 
 	c_numb = ft_c_num(s, c);

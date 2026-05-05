@@ -6,14 +6,14 @@
 /*   By: sebsilve <seb.silves@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 20:40:19 by sebsilve          #+#    #+#             */
-/*   Updated: 2026/04/20 20:40:19 by sebsilve         ###   ########.fr       */
+/*   Updated: 2026/05/05 14:53:58 by sebsilve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_toupper(int	c)
+int	ft_toupper(int c)
 {
-	if(c >= 'a' && c <= 'z')
+	if (c >= 'a' && c <= 'z')
 		c -= 32;
 	return (c);
 }

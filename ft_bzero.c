@@ -6,7 +6,7 @@
 /*   By: sebsilve <seb.silves@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/19 15:58:19 by sebsilve          #+#    #+#             */
-/*   Updated: 2026/04/19 15:58:19 by sebsilve         ###   ########.fr       */
+/*   Updated: 2026/05/05 11:35:29 by sebsilve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,7 +15,7 @@ void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*h;
 
-	h = (unsigned char*) s;
-	while(n--)
+	h = (unsigned char *) s;
+	while (n--)
 		*h++ = 0;
 }

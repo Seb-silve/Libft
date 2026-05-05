@@ -6,12 +6,12 @@
 /*   By: sebsilve <seb.silves@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 11:39:05 by sebsilve          #+#    #+#             */
-/*   Updated: 2026/04/28 11:39:05 by sebsilve         ###   ########.fr       */
+/*   Updated: 2026/05/05 11:49:37 by sebsilve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_intLen(int	n)
+int	ft_intlen(int n)
 {
 	int	x;
 
@@ -31,14 +31,14 @@ int	ft_intLen(int	n)
 	return (x);
 }
 
-char	*ft_itoa(int	n)
+char	*ft_itoa(int n)
 {
 	char	*p;
-	int	index;
-	long nb;
+	int		index;
+	long	nb;
 
 	nb = (long) n;
-	index = ft_intLen(n);
+	index = ft_intlen(n);
 	p = malloc(index + 1);
 	if (p == NULL)
 		return (NULL);

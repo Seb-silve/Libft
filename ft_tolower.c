@@ -6,14 +6,14 @@
 /*   By: sebsilve <seb.silves@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 20:47:53 by sebsilve          #+#    #+#             */
-/*   Updated: 2026/04/20 20:47:53 by sebsilve         ###   ########.fr       */
+/*   Updated: 2026/05/05 14:54:33 by sebsilve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_tolower(int	c)
+int	ft_tolower(int c)
 {
-	if(c >= 'A' && c <= 'Z')
+	if (c >= 'A' && c <= 'Z')
 		c += 32;
 	return (c);
 }

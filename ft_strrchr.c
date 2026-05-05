@@ -11,16 +11,16 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strrchr(const char	*s, int	c)
+char	*ft_strrchr(const char *s, int c)
 {
-	char*	last;
-	int	x;
+	char	*last;
+	int		x;
 
 	x = 0;
 	last = NULL;
 	while (s[x])
 	{
-		if(s[x] == c)
+		if (s[x] == c)
 			last = (char *)&s[x];
 		x++;
 	}
