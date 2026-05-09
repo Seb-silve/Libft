@@ -11,11 +11,11 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_contains(char const *set, char x)
+static int	ft_contains(char const *set, char x)
 {
-	while (*set++)
+	while (*set)
 	{
-		if (*set == x)
+		if (*set++ == x)
 			return (1);
 	}
 	return (0);
@@ -23,12 +23,15 @@ int	ft_contains(char const *set, char x)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*start;
+	int	start;
+	int	end;
 
-	while (ft_contains(s1, *s1))
-		s1++;
-	start = s1;
-
-
+	start = 0;
+	end = ft_strlen(s1);
+		while (s1[start] && ft_contains(set, s1[start]))
+			start++;
+		while (end > start && ft_contains(set, s1[end - 1]))
+			end--;
+		end = end - start;
+		return (ft_substr(s1, start, end));
 }
-

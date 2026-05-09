@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_intlen(int n)
+static int	ft_intlen(long n)
 {
 	int	x;
 
@@ -38,7 +38,7 @@ char	*ft_itoa(int n)
 	long	nb;
 
 	nb = (long) n;
-	index = ft_intlen(n);
+	index = ft_intlen((long)n);
 	p = malloc(index + 1);
 	if (p == NULL)
 		return (NULL);

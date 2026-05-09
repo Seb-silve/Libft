@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t	ft_c_num(char const *s, char c)
+static size_t	ft_c_num(char const *s, char c)
 {
 	size_t	num;
 
@@ -25,7 +25,7 @@ size_t	ft_c_num(char const *s, char c)
 	return (num + 1);
 }
 
-size_t	ft_word_len(char *s, char c)
+static size_t	ft_word_len(char *s, char c)
 {
 	int	x;
 

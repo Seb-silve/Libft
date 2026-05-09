@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_ft_strjoin.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sebsilve <seb.silves@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 18:44:12 by sebsilve          #+#    #+#             */
-/*   Updated: 2026/05/05 14:51:57 by sebsilve         ###   ########.fr       */
+/*   Created: 2026/05/09 20:41:54 by sebsilve          #+#    #+#             */
+/*   Updated: 2026/05/09 20:41:54 by sebsilve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*ft_memmove(void *destination, const void *source, size_t size)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
+	size_t	len;
+	char	*joint;
+	size_t	index;
+	char	*joint0;
 
-	d = (unsigned char *) destination;
-	s = (const unsigned char *) source;
-	if (d == s)
-		return (destination);
-	if (d < s)
+	len = ft_strlen(s1);
+	len += ft_strlen(s2);
+	joint = malloc(len + 1);
+	if (!joint)
+		return (NULL);
+	joint0 = joint;
+	index = 0;
+	while (s1[index])
 	{
-		while (size--)
-			*d++ = *s++;
+		*joint++ = s1[index];
+		index++;
 	}
-	else
+	index = 0;
+	while (s2[index])
 	{
-		d += size;
-		s += size;
-		while (size--)
-			*--d = *--s;
+		*joint ++ = s2[index];
+		index ++;
 	}
-	return (destination);
+	*joint	= '\0';
+	return (joint0);
 }

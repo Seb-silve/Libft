@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sebsilve <seb.silves@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 18:44:12 by sebsilve          #+#    #+#             */
-/*   Updated: 2026/05/05 14:51:57 by sebsilve         ###   ########.fr       */
+/*   Created: 2026/05/09 20:32:55 by sebsilve          #+#    #+#             */
+/*   Updated: 2026/05/09 20:32:55 by sebsilve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*ft_memmove(void *destination, const void *source, size_t size)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
+	const unsigned char *p;
 
-	d = (unsigned char *) destination;
-	s = (const unsigned char *) source;
-	if (d == s)
-		return (destination);
-	if (d < s)
+	p = (unsigned char *) s;
+	while (n--)
 	{
-		while (size--)
-			*d++ = *s++;
+		if (*p == (unsigned char) c)
+			return ((void *) p);
+		p++;
 	}
-	else
-	{
-		d += size;
-		s += size;
-		while (size--)
-			*--d = *--s;
-	}
-	return (destination);
+	return (NULL);
 }
