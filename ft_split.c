@@ -48,7 +48,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	while (*s)
 	{
-		split[x] = ft_substr(s, 0, ft_word_len(s, c));
+		split[x] = ft_substr(s, 0, ft_word_len((char *)s, c));
 		if (split[x] == NULL)
 		{
 			while (x > 0)
@@ -56,7 +56,7 @@ char	**ft_split(char const *s, char c)
 			free(split);
 			return (NULL);
 		}
-		s += ft_word_len(s, c) + (*s != '\0');
+		s += ft_word_len((char *)s, c) + (*s != '\0');
 		x++;
 	}
 	split[x] = NULL;

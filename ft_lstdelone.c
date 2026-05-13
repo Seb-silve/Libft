@@ -1,40 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft_strjoin.c                                    :+:      :+:    :+:   */
+/*   ft_lstdelone.C                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sebsilve <seb.silves@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/09 20:41:54 by sebsilve          #+#    #+#             */
-/*   Updated: 2026/05/09 20:41:54 by sebsilve         ###   ########.fr       */
+/*   Created: 2026/05/04 21:02:15 by sebsilve          #+#    #+#             */
+/*   Updated: 2026/05/04 21:02:15 by sebsilve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_lstdelone(t_list	*lst, void (*del)(void*))
 {
-	char	*joint;
-	size_t	index;
-	char	*joint0;
-
-	if (!s1 || !s2)
-		return (ft_strdup(NULL));
-	joint = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (!joint)
-		return (NULL);
-	joint0 = joint;
-	index = 0;
-	while (s1[index])
-	{
-		*joint++ = s1[index];
-		index++;
-	}
-	index = 0;
-	while (s2[index])
-	{
-		*joint ++ = s2[index];
-		index ++;
-	}
-	*joint = '\0';
-	return (joint0);
+	if (!lst || !del)
+		return ;
+	del(lst->content);
+	free(lst);
 }
