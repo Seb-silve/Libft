@@ -11,18 +11,25 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-static size_t	ft_c_num(char const *s, char c)
+static size_t	ft_count_words(char const *s, char c)
 {
-	size_t	num;
+	size_t	count;
+	int		in_word;
 
-	num = 0;
+	count = 0;
+	in_word = 0;
 	while (*s)
 	{
-		if (*s == c)
-			num++;
+		if (*s != c && !in_word)
+		{
+			in_word = 1;
+			count++;
+		}
+		else if (*s == c)
+			in_word = 0;
 		s++;
 	}
-	return (num + 1);
+	return (count);
 }
 
 static size_t	ft_word_len(char *s, char c)
@@ -37,26 +44,28 @@ static size_t	ft_word_len(char *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	c_numb;
-	int		x;
 	char	**split;
+	int		x;
 
-	c_numb = ft_c_num(s, c);
-	x = 0;
-	split = malloc(sizeof(char *) * (c_numb + 1));
-	if (split == NULL)
+	split = malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
+	if (!split)
 		return (NULL);
+	x = 0;
 	while (*s)
 	{
+		while (*s == c)  // skip les séparateurs
+			s++;
+		if (!*s)
+			break ;
 		split[x] = ft_substr(s, 0, ft_word_len((char *)s, c));
-		if (split[x] == NULL)
+		if (!split[x])
 		{
-			while (x > 0)
-				free(split[--x]);
+			while (x >= 0)   // fix: libère aussi split[0]
+				free(split[x--]);
 			free(split);
 			return (NULL);
 		}
-		s += ft_word_len((char *)s, c) + (*s != '\0');
+		s += ft_word_len((char *)s, c);
 		x++;
 	}
 	split[x] = NULL;
